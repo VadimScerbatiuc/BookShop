@@ -14,6 +14,8 @@ namespace Books.Models
         public string Img { get; set; }
         [Required]
         public ushort Price { get; set; }
+        
+        public string Description { get; set; }
 
         public bool IsFavorite { get; set; }
         [Required]
