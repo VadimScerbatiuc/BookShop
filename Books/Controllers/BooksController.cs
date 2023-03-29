@@ -16,8 +16,8 @@ namespace Books.Controllers
 
         public IActionResult Index()
         {
-            IEnumerable<Test> objTestList = _db.Test;
-            return View(objTestList);
+            //IEnumerable<Test> objTestList = _db.Test;
+            return View(/*objTestList*/);
         }
     }
 }

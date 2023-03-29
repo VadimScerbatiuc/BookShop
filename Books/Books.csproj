@@ -13,10 +13,11 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="VisualStudio.gitignore" Version="1.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="temporar\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

@@ -5,9 +5,13 @@ namespace Books.Models
     public class Genre
     {
         [Key]
-        public int Id { get; set; }
-        [Required]
-        public string Name { get; set; }
-        public List<Books> books { get; set; }
+        public int GenreId { get; set; }
+        
+        [Required(ErrorMessage ="Required field!")]
+        [Display(Name = "Introduce genre")]
+        [StringLength(200)]
+        public string? GenreName { get; set; }
+
+        public List<Books>? books { get; set; }  //one-to-many 
     }
 }

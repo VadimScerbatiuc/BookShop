@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Books.Models
 {
@@ -6,20 +7,33 @@ namespace Books.Models
     {
         [Key] //primary key
         public int Id { get; set; }
-        [Required]
-        public string Name { get; set; }
-        [Required]
-        public string Author { get; set; }
-        [Required]  
-        public string Img { get; set; }
-        [Required]
-        public ushort Price { get; set; }
-        
-        public string Description { get; set; }
 
+        [Required(ErrorMessage = "Required field!")]
+        [Display(Name = "Introduce book title")]
+        [StringLength(200)]
+        public string? BookName { get; set; }
+
+        [Required(ErrorMessage = "Required field!")]
+        [Display(Name = "Introduce book author")]
+        [StringLength(200)]
+        public string? Author { get; set; }
+
+        [DefaultValue("https://pngimg.com/uploads/book/book_PNG50990.png")]
+        public string? Img { get; set; }
+
+        [Required(ErrorMessage = "Required field!")]
+        [Display(Name = "Introduce book price")]
+        [Range(50,1000)]
+        public ushort Price { get; set; }
+
+        [StringLength(5000)]
+        public string? Description { get; set; }
+
+        [DefaultValue("false")]
         public bool IsFavorite { get; set; }
-        [Required]
+        
+
         public int GenreId { get; set; }   //foreign key
-        public virtual Genre genre { get; set; }
+        public virtual Genre? genre { get; set; }   
     }
 }

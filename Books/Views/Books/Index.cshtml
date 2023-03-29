@@ -1,4 +1,6 @@
-﻿@model IEnumerable<Test>
+﻿@{
+   // model IEnumerable<Test>;
+}
 
 @{
     ViewData["Title"] = "Books List";
@@ -9,7 +11,7 @@
 
 <div class="row">
     @foreach(var book in Model)
-    {
+    {/*
         <div class="col-sm-12">
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
@@ -18,6 +20,7 @@
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
-        </div>        
+        </div>      
+     */   
     }
 </div>
