@@ -3,7 +3,11 @@
     // var users = ViewBag.Users as List<Books.Controllers.About.Index>;
 }
 
-<h1>Books List</h1>
+<div class="d-flex justify-content-between align-items-center">
+    <h1>Books List</h1>
+    <a asp-controller="Books" asp-action="Index"><i class="fa-solid fa-plus fa-2xl" style="color: #028000;"></i></a>
+</div>
+
 
 @{
     int cardNum = 10;
@@ -18,7 +22,7 @@
                     <img class="card-img-top" src="https://pngimg.com/uploads/book/book_PNG50990.png" alt="Card image cap">
                     <h5 class="card-title">Book title</h5
                     <p class="card-text">Book description</p>
-                    <div class="d-flex justify-content-between" style="">
+                    <div class="d-flex justify-content-between" >
                         <div >
                             <p style="font-size:20px">$99</p>
                         </div>
