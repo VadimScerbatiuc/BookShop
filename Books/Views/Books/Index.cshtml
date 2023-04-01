@@ -1,45 +1,26 @@
-﻿@model IEnumerable<Test>
+﻿@{
+   // model IEnumerable<Test>;
+}
 
 @{
     ViewData["Title"] = "Books List";
-
 }
-
 
 <h1>Books List</h1>
 <h6>Good job Vadim</h6>
 
-<table class="table table-bordered table-striped" style="width:100%">
-
-    <thead>
-        <tr>
-            <th>
-                Name
-            </th>
-            <th>
-                Age
-            </th>
-            <th>
-                SecondNAme
-            </th>
-        </tr>
-    </thead>
-
-    <tbody>
-        @foreach(var obj in Model)
-        {
-            <tr>
-                <td width="50%">
-                    @obj.Name
-                </td>
-                <td width="30%">
-                    @obj.Age
-                </td>
-                <td width="30%">
-                    @obj.Fname
-                </td>
-            </tr>
-        }
-    </tbody>
-
-</table>
+<div class="row">
+    @foreach(var book in Model)
+    {/*
+        <div class="col-sm-12">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">@book.Name</h5>
+                    <p class="card-text"> Price: @book.Age </p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>      
+     */   
+    }
+</div>
