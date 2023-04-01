@@ -1,6 +1,26 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Home Page";
-   // var users = ViewBag.Users as List<Books.Controllers.About.Index>;
+    // var users = ViewBag.Users as List<Books.Controllers.About.Index>;
 }
 
+<h1>Books List</h1>
+
+@{
+    int cardNum = 10;
+}
+
+<div class="row">
+    @for (int i = 0; i <= cardNum; i++)
+    {
+        <div class="col-sm-3">
+            <div class="card mb-4" style="max-width: 20rem;">
+                <img class="card-img-top" src="https://pngimg.com/uploads/book/book_PNG50990.png" alt="Card image cap">
+                <div class="card-body" style="text-align: center;">
+                    <h5 class="card-title">Title description</h5 
+                    <p class="display-5 my-4 text-primary fw-bold">Price:  $100 </p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
