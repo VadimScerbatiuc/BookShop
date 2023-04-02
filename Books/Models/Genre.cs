@@ -12,6 +12,6 @@ namespace Books.Models
         [StringLength(200)]
         public string? GenreName { get; set; }
 
-        public List<Books>? books { get; set; }  //one-to-many 
+        public List<Book>? Book { get; set; }  //one-to-many 
     }
 }
