@@ -1,26 +1,35 @@
 ﻿@{
-   // model IEnumerable<Test>;
+    // model IEnumerable<Test>;
 }
 
 @{
     ViewData["Title"] = "Books List";
 }
 
-<h1>Books List</h1>
-<h6>Good job Vadim</h6>
+<h1>Add new book</h1>
+<h6>Back to list</h6>
 
-<div class="row">
-    @foreach(var book in Model)
-    {/*
-        <div class="col-sm-12">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">@book.Name</h5>
-                    <p class="card-text"> Price: @book.Age </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>      
-     */   
-    }
-</div>
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">Book title</label>
+        <input class="form-control">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Author</label>
+        <input class="form-control">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Price</label>
+        <input class="form-control">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Description</label>
+        <input class="form-control">
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">Genre</label>
+        <input class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Add book</button>
+</form>
+
