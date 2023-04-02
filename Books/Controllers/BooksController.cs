@@ -16,8 +16,16 @@ namespace Books.Controllers
 
         public IActionResult Index()
         {
-            //IEnumerable<Test> objTestList = _db.Test;
-            return View(/*objTestList*/);
+            IEnumerable<Book> BookToView = _db.Book;
+            return View(BookToView);
+        }
+
+        [HttpPost]
+        public ActionResult Create(Book obj)
+        {
+            _db.Book.Add(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Home/Index");
         }
     }
 }
