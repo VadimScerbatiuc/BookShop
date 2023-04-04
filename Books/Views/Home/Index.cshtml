@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Books.Models.Book>
+@{
     ViewData["Title"] = "Home Page";
     // var users = ViewBag.Users as List<Books.Controllers.About.Index>;
 }
@@ -14,16 +15,16 @@
 }
 
 <div class="row" >
-    @for (int i = 0; i <= cardNum; i++)
+    @foreach(var book in Model)
     {
          <div class="col-sm-6 col-lg-3">       
             <div class="card">
                 <div class="card-body">
                     <img class="card-img-top" src="https://pngimg.com/uploads/book/book_PNG50990.png" alt="Card image cap">
-                    <h5 class="card-title">Book title</h5
-                    <p class="card-text">Book description</p>
+                    <h5 class="card-title">@book.BookName</h5>
+                    <p class="card-text">@book.Description   ,, @book.Genre.GenreName </p>
                     <div class="d-flex align-items-center justify-content-between">
-                        <span class="fs-5">$99</span>
+                        <span class="fs-5">Price: @book.Price</span>
                         <a href="#" class="btn btn-primary" ><i class="fa-solid fa-cart-shopping"></i>  Add to cart</a>
                     </div>
                 </div>
