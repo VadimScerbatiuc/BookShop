@@ -5,7 +5,7 @@
 }
 
 <h1>Add new book</h1>
-<h6>Back to list</h6>
+<h6>Back tosdsdd list</h6>
 
 <form method="post" asp-action="Create">
     <div class="mb-3">
@@ -25,10 +25,7 @@
         <input asp-for="Description" class="form-control">
     </div>
     <div class="mb-3">
-        <label asp-for="GenreId">Genre</label>
-        <select asp-for="GenreId" >
-
-        </select>
+         @Html.DropDownListFor(model => model.GenreId, ViewBag.Genre as SelectList)
     </div>
     <button type="submit" class="btn btn-primary">Create</button>
     <a asp-controller="Home" asp-action="Index" class="btn btn-primary">

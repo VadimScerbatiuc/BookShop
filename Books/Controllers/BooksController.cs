@@ -1,6 +1,7 @@
 ﻿using Books.Data;
 using Books.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Books.Controllers
 {
@@ -14,10 +15,23 @@ namespace Books.Controllers
             _db = db;
         }
 
-        public IActionResult Index()
+        [HttpGet]
+        public IActionResult Create()
         {
-            //IEnumerable<Test> objTestList = _db.Test;
-            return View(/*objTestList*/);
+            //formiruem spisok komand dlea peredachi v predsavlenuie
+            SelectList genre = new SelectList(_db.Genre, "GenreId", "GenreName");
+            ViewBag.Genre = genre;
+            return View();
         }
+
+        [HttpPost]
+        public IActionResult Create(Book book)
+        {
+            _db.Book.Add(book);
+            _db.SaveChanges();  
+
+            return RedirectToAction("Index", "Home");
+        }
+
     }
 }
