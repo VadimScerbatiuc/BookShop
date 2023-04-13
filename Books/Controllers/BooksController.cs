@@ -27,10 +27,14 @@ namespace Books.Controllers
         [HttpPost]
         public IActionResult Create(Book book)
         {
-            _db.Book.Add(book);
-            _db.SaveChanges();  
+            if (ModelState.IsValid)
+            {
 
-            return RedirectToAction("Index", "Home");
+                _db.Book.Add(book);
+                _db.SaveChanges();
+                return RedirectToAction("Index", "Home");
+            }
+            return View();
         }
 
     }
