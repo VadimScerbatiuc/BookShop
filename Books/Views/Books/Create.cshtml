@@ -29,13 +29,14 @@
         <span asp-validation-for="Description" />
     </div>
     <div class="mb-3">
-         @Html.DropDownListFor(model => model.GenreId, ViewBag.Genre as SelectList);
+         @Html.DropDownListFor(model => model.GenreId, ViewBag.Genre as SelectList)
     </div>
     <button type="submit" class="btn btn-primary">Create</button>
     <a asp-controller="Home" asp-action="Index" class="btn btn-primary">
         Back to List
     </a>
 </form>
+
 
 
 @section Scripts
