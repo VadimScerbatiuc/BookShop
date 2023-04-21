@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Books.styles.css" asp-append-version="true" />
-    <link href="toastr.css" rel="stylesheet" />
+   <link rel="stylesheet" href="~/css/icons.css" asp-append-version="true" />
+
 </head>
 <body>
     <header>
@@ -50,7 +51,6 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="https://kit.fontawesome.com/3c603c8ce9.js" crossorigin="anonymous"></script>
-    <script src="toastr.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
     @await Component.InvokeAsync("Notyf")
 </body>

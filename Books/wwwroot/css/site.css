@@ -1,3 +1,9 @@
+:root {
+    --error: #b94a48 ;
+    --success: #16a085;
+}
+
+
 html {
   font-size: 14px;
 }
@@ -18,16 +24,16 @@ body {
 }
 
 .field-validation-error {
-    color: #b94a48;
+    color: var(--error);
 }
 
 input.input-validation-error {
-    border: 1px solid #b94a48;
+    border: 1px solid var(--error);
 }
 
 input.valid {
-    border: 1px solid #16a085;
+    border: 1px solid var(--success);
 }
 
 .validation-summary-errors {
-    color: #b94a48;
+    color: var(--error);
