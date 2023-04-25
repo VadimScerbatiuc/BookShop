@@ -1,6 +1,8 @@
 :root {
-    --error: #b94a48 ;
+    --error: #b94a48;
     --success: #16a085;
+    --black: #000000;
+    --dim-gray: #696969;
 }
 
 
@@ -37,3 +39,14 @@ input.valid {
 
 .validation-summary-errors {
     color: var(--error);
+}
+
+.card-link, a.link-text:hover {
+    outline: none;
+    text-decoration: none;
+    color: var(--black);
+}
+
+.description-text-color{
+    color: var(--dim-gray);
+}
