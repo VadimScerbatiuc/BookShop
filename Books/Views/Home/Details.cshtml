@@ -1,0 +1,42 @@
+﻿@model Books.Models.Book
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.BookName)</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Author
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+        <dt class = "col-sm-2">
+            Price
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class = "col-sm-2">
+            Description
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            Genre
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Genre.GenreName)
+        </dd>
+    </dl>
+</div>
+<div>
+   <!--@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) -->
+    <a asp-action="Index" class="btn btn-primary"> Back to List </a>
+</div>

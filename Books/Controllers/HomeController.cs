@@ -23,6 +23,12 @@ namespace Books.Controllers
             return View(objTestList);
         }
 
+        public IActionResult Details(int id)
+        {
+            Book bookDetails = _db.Book.Include(g=> g.Genre).FirstOrDefault(b=> b.Id == id);
+            return View(bookDetails);
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
