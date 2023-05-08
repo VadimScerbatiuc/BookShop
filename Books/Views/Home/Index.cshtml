@@ -9,6 +9,13 @@
     <a asp-controller="Books" asp-action="Create"><i class="fa-solid fa-plus fa-2xl fontawesome"></i></a>
 </div>
 
+@if (TempData["success"] != null)
+{
+    <div class="alert alert-success">
+        <strong>@TempData["success"]</strong>
+    </div>
+}
+
 <div class="row" >
     @foreach(var book in Model)
     {

@@ -19,7 +19,6 @@ namespace Books.Controllers
         public IActionResult Index()
         {
             IEnumerable<Book> objTestList = _db.Book.Include(p => p.Genre).ToList();
-
             return View(objTestList);
         }
 

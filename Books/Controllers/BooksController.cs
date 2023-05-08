@@ -32,10 +32,10 @@ namespace Books.Controllers
             {
                 _db.Book.Add(book);
                 _db.SaveChanges();
-
+                TempData["success"] = "Book created successfylly!";
                 return RedirectToAction("Index", "Home");
             }
-            return View();
+            return View(book);
         }
 
     }
