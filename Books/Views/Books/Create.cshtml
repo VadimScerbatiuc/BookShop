@@ -1,0 +1,48 @@
+﻿@model Book
+
+@{
+    ViewData["Title"] = "Books List";
+}
+
+<h1>Add new book</h1>
+
+<form method="post" asp-action="Create">
+    <div class="mb-3">
+        <label asp-for="BookName">Book title</label>
+        <input asp-for="BookName" class="form-control">
+        <span asp-validation-for="BookName" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Author">Author</label>
+        <input asp-for="Author" class="form-control">
+        <span asp-validation-for="Author" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Price">Price</label>
+        <input asp-for="Price" class="form-control">
+        <span asp-validation-for="Price" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Description">Description</label>
+        <input asp-for="Description" class="form-control">
+        <span asp-validation-for="Description" />
+    </div>
+    <div class="mb-3">
+         @Html.DropDownListFor(model => model.GenreId, ViewBag.Genre as SelectList ,
+                               new { @class = "form-select" } )
+                                
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">
+        Back to List
+    </a>
+</form>
+
+
+
+@section Scripts
+    {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

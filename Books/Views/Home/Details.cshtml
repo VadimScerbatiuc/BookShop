@@ -1,0 +1,48 @@
+﻿@model Books.Models.Book
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4></h4>
+    <br>
+
+    <div class="row">
+                <div class="col-sm-4 thumbnail">
+                    <img style="width: 20rem" class="card-img-top" src="https://pngimg.com/uploads/book/book_PNG50990.png" alt="Card image cap">
+                </div>
+                <div class="col-sm-8">
+                    <h1 class="display-4 fst-italic">@Html.DisplayFor(model => model.BookName)</h1>
+                    <p class="lead my-3"> @Html.DisplayFor(model => model.Description) </p>
+                    <dl class="row">
+                        <dt class="col-sm-2">
+                            Author
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Author)
+                        </dd>
+                        <dt class="col-sm-2">
+                            Genre
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Genre.GenreName)
+                        </dd>
+                        <dt class="col-sm-2">
+                            Price
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Price)
+                        </dd>
+                    </dl>
+                </div>
+    </div>
+    <hr />
+
+</div>
+<div>
+   <!--@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) -->
+    <a asp-action="Index" class="btn btn-primary"> Back to List </a>
+</div>

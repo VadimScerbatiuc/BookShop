@@ -1,24 +1,32 @@
-﻿using Books.Models;
+﻿using Books.Data;
+using Books.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace Books.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ApplicationDbContext _db;
+
+        public HomeController(ApplicationDbContext db)
         {
-            _logger = logger;
+            _db = db;
         }
 
         public IActionResult Index()
         {
-            return View();
+            IEnumerable<Book> objTestList = _db.Book.Include(p => p.Genre).ToList();
+            return View(objTestList);
         }
-               
 
+        public IActionResult Details(int id)
+        {
+            Book bookDetails = _db.Book.Include(g=> g.Genre).FirstOrDefault(b=> b.Id == id);
+            return View(bookDetails);
+        }
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

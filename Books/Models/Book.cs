@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Books.Models
 {
-    public class Books
+    public class Book
     {
         [Key] //primary key
         public int Id { get; set; }
@@ -34,6 +34,6 @@ namespace Books.Models
         
 
         public int GenreId { get; set; }   //foreign key
-        public virtual Genre? genre { get; set; }   
+        public virtual Genre? Genre { get; set; }   
     }
 }
